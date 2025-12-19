@@ -127,11 +127,11 @@ nav a::after {
 
 .dropdown {
   position: relative;
-  list-style: none;
+  list-style: none !important;
 }
 
 .dropdown-content {
-  display: none;
+  display: none !important;
   position: absolute;
   top: calc(100% + 10px);
   left: 0;
