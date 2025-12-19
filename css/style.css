@@ -133,24 +133,74 @@ nav a::after {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px);
   left: 0;
-  min-width: 160px;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+
+  min-width: 170px;
+  background: linear-gradient(180deg, #0b0f1e, #020617);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+
+  box-shadow:
+    0 0 20px rgba(0,225,255,.35),
+    inset 0 0 15px rgba(0,225,255,.15);
+
+  z-index: 999;
+  overflow: hidden;
 }
 
+/* item dropdown */
 .dropdown-content a {
   display: block;
-  padding: 8px 14px;
+  padding: 12px 16px;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+
+  color: var(--text-light);
   text-decoration: none;
-  color: #333;
+
+  position: relative;
 }
 
+/* neon hover */
 .dropdown-content a:hover {
-  background: #f3f4f6;
+  background: rgba(0,225,255,.15);
+  color: var(--accent-neon);
 }
+
+/* garis neon animasi */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--accent-neon);
+  opacity: .6;
+  animation: neonBorder 6s linear infinite;
+  pointer-events: none;
+}
+
+.btn-drop {
+  background: var(--accent);
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-drop:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
 
 @keyframes glitch {
     0% { clip-path: inset(0 100% 0 0); }
