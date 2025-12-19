@@ -127,7 +127,7 @@ nav a::after {
 
 .dropdown {
   position: relative;
-  list-style: none !important;
+  list-style: none;
 }
 
 .dropdown-content {
