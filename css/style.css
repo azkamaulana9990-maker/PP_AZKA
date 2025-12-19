@@ -127,79 +127,24 @@ nav a::after {
 
 .dropdown {
   position: relative;
-  list-style: none;
 }
 
+/* default tertutup */
 .dropdown-content {
-  display: none !important;
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-
-  min-width: 170px;
-  background: linear-gradient(180deg, #0b0f1e, #020617);
-  border: 2px solid var(--accent);
-  border-radius: 12px;
-
-  box-shadow:
-    0 0 20px rgba(0,225,255,.35),
-    inset 0 0 15px rgba(0,225,255,.15);
-
-  z-index: 999;
-  overflow: hidden;
-}
-
-/* item dropdown */
-.dropdown-content a {
-  display: block;
-  padding: 12px 16px;
-
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-
-  color: var(--text-light);
-  text-decoration: none;
-
-  position: relative;
-}
-
-/* neon hover */
-.dropdown-content a:hover {
-  background: rgba(0,225,255,.15);
-  color: var(--accent-neon);
-}
-
-/* garis neon animasi */
-.dropdown-content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px dashed var(--accent-neon);
-  opacity: .6;
-  animation: neonBorder 6s linear infinite;
+  opacity: 0;
+  transform: translateY(-8px);
   pointer-events: none;
+  transition: .25s ease;
 }
 
-.btn-drop {
-  background: var(--accent);
-  color: black;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 10px;
-
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  letter-spacing: 1px;
-
-  cursor: pointer;
-  transition: 0.3s;
+/* buka saat hover ATAU fokus */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.btn-drop:hover {
-  background: white;
-  transform: scale(1.05);
-}
 
 
 @keyframes glitch {
