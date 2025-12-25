@@ -102,22 +102,6 @@ body::after {
 }
 
 /* === PROFILE IMAGE + NEON RING (SCALE FIXED SMALLER) === */
-/* .profile-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
- */
-
-/* .profile-img {
-    with: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-*/
-
-
 .profile-img {
     width: 110px;     /* diperkecil */
     height: 110px;
@@ -155,8 +139,7 @@ nav a {
     font-size: 1rem;
     position: relative;
     letter-spacing: 1px;
-    padding: 4px 6px; */
-
+    padding: 4px 6px; 
     transition:
         color 0.3s ease,
         filter 0.3s ease,
