@@ -69,10 +69,7 @@ body::after {
 
 
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
+
 
 .profile-img {
     width: 110px;     /* diperkecil */
@@ -107,98 +104,59 @@ nav a {
     color: var(--text-light);
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     position: relative;
     letter-spacing: 1px;
     padding: 4px 6px;
 }
 
-nav a::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--accent-neon);
-    clip-path: inset(0 100% 0 0);
-    animation: glitch 2s infinite linear alternate-reverse;
-}
-
+/* dropdown */
 .dropdown {
-  position: relative;
+    list-style: none;
+    position: relative;
 }
 
-/* default tertutup */
-.dropdown-content {
-  opacity: 0;
-  transform: translateY(-8px);
-  pointer-events: none;
-  transition: .25s ease;
+/* submenu */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #0e111d;
+    display: none;
+    z-index: 10;
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
 }
 
-/* buka saat hover ATAU fokus */
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+/* tampil saat hover */
+.dropdown:hover .submenu {
+    display: block;
 }
 
-
-
-@keyframes glitch {
-    0% { clip-path: inset(0 100% 0 0); }
-    50% { clip-path: inset(0 0 0 0); }
-    100% { clip-path: inset(0 100% 0 0); }
+/* item link */
+.submenu li a {
+    display: block;              /* PENTING */
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-top: 1px solid #00e1ff;
+    white-space: nowrap;         /* mencegah teks turun baris */
 }
 
-/* === FLOATING BLOCK === */
-.floating-block {
-    width: 80px;
-    height: 80px;
-    background: var(--accent);
-    margin: 2rem auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px var(--accent-neon);
-    animation: jump 1.4s infinite ease-in-out;
+/* hover effect */
+.submenu li a:hover {
+    background-color: #3498db;
 }
 
-@keyframes jump {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px) scale(1.1); }
-}
 
 /* === SECTION DEFAULT === */
 section {
     padding: 3rem 10%;
 }
 
-/* === CARD STYLE === */
-.card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 25px rgba(0,255,255,0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 2px dashed var(--accent-neon);
-    animation: neonBorder 8s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes neonBorder {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 /* === TABLE === */
 table {
@@ -226,25 +184,6 @@ tbody tr:hover {
     transition: 0.3s;
 }
 
-/* === PROJECT GRID === */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.project {
-    background: #131a2d;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 18px rgba(0,255,255,0.2);
-    transition: 0.4s;
-}
-
-.project:hover {
-    transform: scale(1.05) rotate(1deg);
-}
 
 /* === FORM === */
 form {
