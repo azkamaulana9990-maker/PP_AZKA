@@ -13,6 +13,47 @@
     --border-neon: #27f3ff;
 }
 
+header {
+    position: relative;
+}
+
+.header-profile {
+    position:absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 2;
+}
+
+.neon-ring  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 140px 40px 20px; /* atas disesuaikan tinggi profile */
+    background: #0e111d;
+    border-bottom: 3px solid #0e111d;
+}
+
+
+.header-bar h1 {
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -61,14 +102,20 @@ body::after {
 }
 
 /* === PROFILE IMAGE + NEON RING (SCALE FIXED SMALLER) === */
-.profile-section {
+/* .profile-section {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
+ */
 
-
-
+/* .profile-img {
+    with: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+*/
 
 
 .profile-img {
@@ -78,7 +125,8 @@ body::after {
     object-fit: cover;
     display: block;
     border: 3px solid rgba(0,0,0,0.6);
-}
+    margin-left: 55px;
+} 
 
 /* === NAVBAR === */
 nav {
@@ -101,13 +149,33 @@ nav ul {
 }
 
 nav a {
-    color: var(--text-light);
+    color: var(--text-light); 
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     position: relative;
     letter-spacing: 1px;
-    padding: 4px 6px;
+    padding: 4px 6px; */
+
+    transition:
+        color 0.3s ease,
+        filter 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.15s ease;
+    }
+
+nav a:hover {
+    color: var(--accent);
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+
+nav:hover a:not(:hover) {
+    filter: blur(1px);
+    opacity: 0.4;
 }
 
 /* dropdown */
@@ -135,6 +203,12 @@ nav a {
 .dropdown:hover .submenu {
     display: block;
 }
+
+.submenu a {
+    filter: blur(0) !important;
+    opacity: 0.5 !important;
+}
+
 
 /* item link */
 .submenu li a {
