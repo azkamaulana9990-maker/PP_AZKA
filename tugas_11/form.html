@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulir</title>
+  <link rel="stylesheet" href="t_11.css">
+</head>
+<header>
+  <h1>Tugas Pengenalan Pemrograman Pertemuan 11</h1>
+    <h2>Form HTML dan CSS</h2>
+</header>
+<body>
+  <form class="form-container">
+    <div class="form-row">
+      <div class="form-group">
+    <label class="form-label" for="nama">Nama:</label>
+    <input class="form-input" type="text" id="nama" placeholder="Tulis nama kamu" required>
+    </div>
+  </div>
+    <!-- email -->
+    <label class="form-label" for="email">Email:</label>
+    <input class="form-input" type="email" placeholder="contoh@email.com" required>  
+
+    <!-- password -->
+    <label class="form-label" for="password">Password:</label>
+    <input class="form-input" type="password" placeholder="Passsword" required>
+    <!-- RADIO BUTTON = Pilih SATU saja (○) -->
+  <p>Jenis Kelamin:</p>
+  <input type="radio" id="pria" name="gender" value="laki-laki">
+  <label for="pria">Laki-laki</label>
+
+  <input type="radio" id="wanita" name="gender" value="perempuan">
+  <label for="wanita">Perempuan</label>
+
+  <!-- CHECKBOX = Pilih BANYAK (□) -->
+  <p>Hobi:</p>
+  <input type="checkbox" id="baca" name="hobi" value="membaca">
+  <label for="baca">Membaca</label>
+
+  <input type="checkbox" id="olahraga" name="hobi" value="olahraga">
+  <label for="olahraga">Olahraga</label>
+
+  <!-- DROPDOWN -->
+  <label for="kota">Kota:</label>
+  <select class="form-select" id="kota" name="kota">
+    <option value="">-- Pilih Kota --</option>
+    <option class="form-textarea" value="jakarta">Jakarta</option>
+    <option class="form-textarea" value="bandung">Bandung</option>
+    <option class="form-textarea" value="surabaya">Surabaya</option>
+  </select>
+
+  <!-- NUMBER = Hanya angka -->
+  <input type="number" min="1" max="100" step="1">
+
+  <!-- DATE = Kalender tanggal -->
+  <input type="date">
+
+  <!-- FILE = Upload file/gambar -->
+  <input type="file" accept=".jpg,.png,.pdf">
+
+  <!-- COLOR = Pilih warna -->
+  <input type="color" value="#3498db">
+
+
+
+
+  <!-- DISABLED = Non-aktif (tidak bisa diisi) -->
+  <input type="text" disabled value="Tidak bisa diubah">
+
+  <!-- READONLY = Hanya baca (bisa dikirim) -->
+  <input type="text" readonly value="Hanya baca">
+
+  <!-- MAXLENGTH = Batas panjang karakter -->
+  <input type="text" maxlength="50" placeholder="batas panjang karakter">
+
+  <!-- SUBMIT = Kirim data form ke server -->
+  <button class="form-button" type="submit">Daftar</button>
+
+  <!-- RESET = Hapus semua isian -->
+  <button class="form-button" type="reset">Hapus</button>
+
+</form>
+
+</body>
+</html>
